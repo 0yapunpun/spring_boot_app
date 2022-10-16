@@ -119,8 +119,7 @@ public class PersonService  implements PersonRepository{
 
 	@Override
 	public <S extends Person> S save(S entity) {
-		// TODO Auto-generated method stub
-		return null;
+		return personRepository.save(entity);
 	}
 
 	@Override
@@ -143,14 +142,12 @@ public class PersonService  implements PersonRepository{
 
 	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
+		personRepository.deleteById(id);
 	}
 
 	@Override
 	public void delete(Person entity) {
 		personRepository.delete(entity);
-		
 	}
 
 	@Override

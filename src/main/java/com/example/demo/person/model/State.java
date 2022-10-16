@@ -14,12 +14,15 @@ import javax.persistence.JoinColumn;
 public class State {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 
 	@ManyToOne
 	@JoinColumn(name = "id_country")
 	private Country country;
 	private String name;
+	
+	public State() {
+	}
 
 	public State(Country country, String name) {
 		super();
@@ -27,11 +30,11 @@ public class State {
 		this.name = name;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

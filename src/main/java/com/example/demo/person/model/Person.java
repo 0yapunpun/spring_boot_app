@@ -15,7 +15,7 @@ public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
-	private int id;
+	private Long id;
 	private String name;
 	private String surname;
 	private String age;
@@ -28,6 +28,8 @@ public class Person {
 	@JoinColumn(name = "id_state")
 	private State state;
 	
+	public Person() {
+	}
 	
 	public Person(String name, String surname, String age, Country country, State state) {
 		super();
@@ -38,11 +40,11 @@ public class Person {
 		this.state = state;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

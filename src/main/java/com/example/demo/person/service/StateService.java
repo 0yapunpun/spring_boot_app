@@ -1,5 +1,6 @@
 package com.example.demo.person.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -23,8 +24,20 @@ public class StateService implements StateRepository {
 
 	@Override
 	public List<State> findAll() {
-		// TODO Auto-generated method stub
 		return stateRepository.findAll();
+	}
+	
+	public List<State> findByIdCountry(Long id) {
+		List<State> statesResponse = new ArrayList<>();
+		List<State> states = stateRepository.findAll();
+		
+		for (int i = 0; i<states.size(); i++) {
+			if (states.get(i).getCountry().getId() == id) {
+				statesResponse.add(states.get(i));
+			}
+		}
+		
+		return statesResponse;
 	}
 
 	@Override
